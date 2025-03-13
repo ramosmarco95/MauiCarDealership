@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<mct:Popup 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="SortOfNewCarsApp.Views.CarDetailsPopup">
+    <ScrollView>
+        <Border Padding="20" BackgroundColor="White" WidthRequest="350">
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Car Image -->
+                <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill" Margin="0,0,0,10"/>
+
+                <!-- Car Make & Model -->
+                <Label Text="{Binding Make}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="{Binding Model}" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <!-- Year -->
+                <HorizontalStackLayout>
+                    <Label Text="Year: " FontSize="16" FontAttributes="Bold"/>
+                    <Label Text="{Binding Year}" FontSize="16"/>
+                </HorizontalStackLayout>
+
+                <!-- Price -->
+                <HorizontalStackLayout>
+                    <Label Text="Price: " FontSize="16" FontAttributes="Bold"/>
+                    <Label Text="{Binding Price, StringFormat='${0:N0}'}" FontSize="16"/>
+                </HorizontalStackLayout>
+
+                <!-- Mileage -->
+                <HorizontalStackLayout>
+                    <Label Text="Mileage: " FontSize="16" FontAttributes="Bold"/>
+                    <Label Text="{Binding Mileage, StringFormat='{0:N0} miles'}" FontSize="16" TextColor="Gray"/>
+                </HorizontalStackLayout>
+
+                <!-- Description -->
+                <VerticalStackLayout>
+                    <Label Text="Description:" FontSize="16" FontAttributes="Bold"/>
+                    <Label Text="{Binding Description}" FontSize="14" TextColor="Gray"/>
+                </VerticalStackLayout>
+
+                <!-- Close Button -->
+                <Button Text="Close" Clicked="ClosePopup" BackgroundColor="Red" TextColor="White" CornerRadius="10" Margin="0,10,0,0"/>
+
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+   
+
+</mct:Popup>

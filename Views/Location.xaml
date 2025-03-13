@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SortOfNewCarsApp.ViewModels"
+             x:Class="SortOfNewCarsApp.Views.LocationPage"
+             Title="Location">
+
+    <ContentPage.BindingContext>
+        <viewModels:LocationViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Address Label -->
+            <Label Text="Dealership Location" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="{Binding Address}" TextColor="Gray" FontSize="Medium" LineBreakMode="WordWrap"/>
+
+            <!-- Image -->
+            <Image Source="{Binding LocationImage}" Aspect="AspectFill" HeightRequest="200" />
+
+            <!-- Button to Open Google Maps -->
+            <Button Text="Open in Google Maps"
+            Command="{Binding OpenInMapsCommand}"
+            BackgroundColor="Green"
+            TextColor="White"/>
+            <Button Text="Home" 
+        TextColor="White" 
+        BackgroundColor="Blue" 
+        CornerRadius="10" 
+        Clicked="GoHome_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

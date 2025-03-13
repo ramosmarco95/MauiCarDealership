@@ -1,0 +1,69 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SortOfNewCarsApp.ViewModels"
+             x:Name="MainInventoryPage"
+             x:Class="SortOfNewCarsApp.Views.InventoryPage"
+             Title="Inventory">
+
+    <Grid RowSpacing="0" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Main Content -->
+            <RowDefinition Height="Auto" />
+            <!-- Button -->
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <VerticalStackLayout>
+                    <Label Text="Scott's Toyota" HorizontalOptions="Center" TextColor="Red" FontAttributes="Bold" FontSize="Large"/>
+                    <Image Source="toyota_logo.png" Grid.Row="0" HeightRequest="100" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <!-- Car List -->
+                <CarouselView Grid.Row="1" ItemsSource="{Binding Cars}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CarouselView.ItemsLayout>
+
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10" Margin="5">
+                                <VerticalStackLayout>
+                                    <Border StrokeShape="RoundRectangle 20" BackgroundColor="Transparent">
+                                        <Image Source="{Binding ImageUrl}" HeightRequest="250" Aspect="AspectFill">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer 
+                                                    Command="{Binding Source={x:Reference MainInventoryPage}, Path=BindingContext.ShowCarDetailsCommand}"
+                                                    CommandParameter="{Binding}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Border>
+
+                                    <!-- Car Details -->
+                                    <Label Text="{Binding Make}" FontSize="Large" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Model}" FontSize="Medium"/>
+                                    <Label Text="{Binding Year}" FontSize="Small"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Grid>
+        </ScrollView>
+
+        <!-- Home Button at Bottom -->
+        <VerticalStackLayout Grid.Row="1" Padding="10">
+            <Button Text="Home" 
+                    TextColor="White" 
+                    BackgroundColor="Blue" 
+                    CornerRadius="10" 
+                    Clicked="GoHome_Clicked"/>
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

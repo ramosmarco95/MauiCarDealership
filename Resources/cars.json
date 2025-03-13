@@ -1,0 +1,29 @@
+[
+  {
+    "ImageUrl": "land_cruiser.png",
+    "Make": "Toyota",
+    "Model": "Land Cruiser",
+    "Year": 2021,
+    "Price": 85000,
+    "Mileage": 45000,
+    "Description": "The Toyota Land Cruiser is a series of four-wheel drive vehicles produced by the Japanese automobile manufacturer Toyota."
+  },
+  {
+    "ImageUrl": "tacoma.png",
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "Year": 2021,
+    "Price": 25000,
+    "Mileage": 35000,
+    "Description": "The Toyota Tacoma is a pickup truck manufactured in the U.S. by the Japanese automobile manufacturer Toyota since 1995."
+  },
+  {
+    "ImageUrl": "wrangler.png",
+    "Make": "Jeep",
+    "Model": "Wrangler",
+    "Year": 2021,
+    "Price": 30000,
+    "Mileage": 25000,
+    "Description": "The Jeep Wrangler is a series of compact and mid-size four-wheel drive off-road SUVs, manufactured by Jeep since 1986."
+  }
+]

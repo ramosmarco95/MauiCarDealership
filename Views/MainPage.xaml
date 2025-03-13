@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortOfNewCarsApp.Views.MainPage"
+             BackgroundColor="White"
+             Title="Home">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30" HorizontalOptions="Center">
+            <Border StrokeShape="RoundRectangle 20" BackgroundColor="Transparent">
+                <Image Source="toyota_logo.png" HeightRequest="200" HorizontalOptions="Center" Aspect="AspectFill"/>
+            </Border>
+            <Label Text="Welcome to Scott’s Toyota!" 
+           FontSize="24" 
+           FontAttributes="Bold" 
+           TextColor="Red"
+           HorizontalOptions="Center"/>
+            <VerticalStackLayout Spacing="10" Padding="20">
+
+                <Button Text="Go to Inventory" 
+            Clicked="OnInventoryClicked"
+            BackgroundColor="Blue"
+            TextColor="White"
+            CornerRadius="10"/>
+
+                <Button Text="Go to Directions" 
+            Clicked="OnLocationClicked"
+            BackgroundColor="Green"
+            TextColor="White"
+            CornerRadius="10"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>    
+</ContentPage>
